@@ -1,0 +1,6 @@
+AuthName My Secret Zone
+AuthType Basic
+AuthUserFile /tmp/.htpasswd
+AuthGroupFile /tmp/.htgroup
+Require group users
+

@@ -1,0 +1,7 @@
+[DB_DataObject]
+
+database    = mysql://apress:apress@localhost/apress
+schema_location = c:/xampp/htdocs/Apress/DataObjects
+class_location  = c:/xampp/htdocs/Apress/DataObjects
+require_prefix  = DataObjects/
+class_prefix    = DataObjects_

@@ -1,0 +1,17 @@
+create table mustsee (
+  ms_id integer primary key,
+  ms_rank integer,
+  ms_name varchar(100),
+  ms_year year
+);
+
+insert into mustsee values (1, 1, "The Godfather", "1972");
+insert into mustsee values (2, 2, "The Shawshank Redemption", "1994");
+insert into mustsee values (3, 3, "The Godfather: Part II", "1974");
+insert into mustsee values (4, 4, "The Lord of the Rings: The Return of the King", "2003");
+insert into mustsee values (5, 5, "Casablanca", "1942");
+insert into mustsee values (6, 6, "Schindler's List", "1993");
+insert into mustsee values (7, 7, "Shichinin no samurai", "1954");
+insert into mustsee values (8, 8, "Star Wars: Episode V - The Empire Strikes Back", "1980");
+insert into mustsee values (9, 9, "Buono, il brutto, il cattivo, Il", "1966");
+insert into mustsee values (10, 10, "Pulp Fiction", "1994");

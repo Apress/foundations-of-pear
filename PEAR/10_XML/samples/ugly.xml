@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- This
+	is a     comment 
+that spans quite a few lines and has a lot of white space that 
+could be condensed and made smaller.  
+	
+			because it's not very readable spanning this many lines and having a lot of characters in one line
+			
+			-->
+<xml>	<element1><childElement/>
+</element1>
+</xml>

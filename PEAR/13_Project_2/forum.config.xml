@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<conf>
+  <DB>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>forum</user>
+    <pass>apress</pass>
+            <database>forum</database>
+  </DB>
+  <Forum>
+    <title>Apress Simple Forum</title>
+    <heading>Apress Forum</heading>
+  </Forum>
+</conf>

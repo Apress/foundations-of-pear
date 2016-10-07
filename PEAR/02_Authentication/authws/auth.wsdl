@@ -1,0 +1,48 @@
+<?xml version ="1.0" encoding ="UTF-8" ?> 
+<definitions name="AuthWebService" 
+  targetNamespace="urn:AuthWebService"
+  xmlns:tns="urn:AuthWebService"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns="http://schemas.xmlsoap.org/wsdl/"> 
+
+<message name="authenticateRequest"> 
+  <part name="username" type="xsd:string"/> 
+  <part name="password" type="xsd:string"/> 
+</message> 
+
+<message name="authenticateResponse"> 
+  <part name="result" type="xsd:string"/> 
+</message> 
+
+<portType name="AuthPortType"> 
+  <operation name="authenticate"> 
+    <input message="tns:authenticateRequest"/> 
+    <output message="tns:authenticateResponse"/> 
+  </operation> 
+</portType> 
+
+<binding name="AuthBinding" type="tns:AuthPortType"> 
+  <soap:binding style="rpc" 
+    transport="http://schemas.xmlsoap.org/soap/http"/> 
+  <operation name="authenticate"> 
+    <soap:operation soapAction="urn:AuthWebService#authenticate"/> 
+    <input> 
+      <soap:body use="encoded" namespace="urn:AuthWebService" 
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/> 
+    </input> 
+    <output> 
+      <soap:body use="encoded" namespace="urn:AuthWebService"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/> 
+    </output> 
+  </operation> 
+</binding> 
+
+<service name="AuthService"> 
+  <port name="AuthPort" binding="AuthBinding"> 
+    <soap:address location="http://localhost/~User1/PEAR/02_Authentication/authws/authws.php"/> 
+  </port> 
+</service> 
+</definitions>

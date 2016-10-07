@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions name="TimeWebService" targetNamespace="urn:TimeWebService"
+	xmlns:typens="urn:TimeWebService"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+	<types>
+		<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="urn:TimeWebService" />
+	</types>
+	<message name="getTime" />
+	<message name="getTimeResponse">
+		<part name="getTimeResponse" type="xsd:string" />
+	</message>
+	<portType name="TimeWebServicePort">
+		<operation name="getTime">
+			<documentation>				Gets an important time in history			</documentation>
+			<input message="typens:getTime" />
+			<output message="typens:getTimeResponse" />
+		</operation>
+	</portType>
+	<binding name="TimeWebServiceBinding"
+		type="typens:TimeWebServicePort">
+		<soap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getTime">
+			<soap:operation soapAction="urn:TimeWebServiceAction" />
+			<input>
+				<soap:body use="encoded" namespace="urn:TimeWebService"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:TimeWebService"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</output>
+		</operation>
+	</binding>
+	<service name="TimeWebService">
+		<port name="TimeWebServicePort"
+			binding="typens:TimeWebServiceBinding">
+			<soap:address
+				location="http://localhost/~Nathan/pear_projects/PEAR/10_XML/services_webservice_ex01.php" />
+		</port>
+	</service>
+</definitions>

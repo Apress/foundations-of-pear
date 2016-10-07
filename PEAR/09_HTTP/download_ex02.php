@@ -1,0 +1,11 @@
+<?php
+require_once('HTTP/Download/Archive.php');
+HTTP_Download_Archive::send(
+  'apress.zip',
+  array('c:/work/Apress/7397/PHP-PEAR_outline.doc',
+           'c:/work/Apress/7397/Author_information.doc'),
+  HTTP_DOWNLOAD_ZIP,
+  '',
+  'c:/work/Apress/'
+);
+?>
